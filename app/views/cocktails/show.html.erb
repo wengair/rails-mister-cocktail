@@ -1,14 +1,26 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
-<div class="container d-flex">
+<div class="container">
+  <img src="<%= @cocktail.photo %>" alt="" class="coc-img">
+</div>
+<div class="container d-flex coc">
   <div class="cocktail">
-    <%= @cocktail.name %>
-    <%= @cocktail.description %>
+    <p class="coc-name"><%= @cocktail.name %></p>
+    <p class="coc-des"><%= @cocktail.description %></p>
+    <div class="review">
+      <% @cocktail.reviews.each do |review|%>
+        <ul>
+          <li><% review.rating.times do %>
+            <i class="fas fa-grin-tongue-squint"></i>
+            <% end %></br>
+          <%= review.content %></li>
+        </ul>
+        <%= render 'reviews/new_review', review: @review %>
+      <% end %>
+    </div>
   </div>
-  <div class="ingredient">
+  <div class="ingredient coc">
     <ul>
-      <% @doses.each do |dose| %>
-        <li><%= dose.ingredient.name %> <%= dose.description %> <%= link_to "test",dose_path(dose),method: :delete  %>  </li>
+      <% @cocktail.doses.each do |dose| %>
+        <li><%= dose.ingredient.name %> <%= dose.description %> <%= link_to dose_path(dose),method: :delete do %> <i class="fas fa-trash del"></i> <% end %> </li>
         <% end %>
     </ul>
     <%= render 'doses/new_dose', dose: @dose %>

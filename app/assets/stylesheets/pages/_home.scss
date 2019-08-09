@@ -1,7 +1,12 @@
 // Specific CSS for your home-page
+$font-mycolor: white;
+
 body{
   background-color: black;
   // background-image: linear-gradient(45deg, #9795f0 0%, #fbc8d4 100%);
+  background-image: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0.3) 70.71%), url('http://thebierstein.com/wp-content/themes/bier_stein/assets/img/Banner_About-04.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .text-field{
@@ -12,12 +17,9 @@ body{
 }
 
 .index-banner{
-  background-image: linear-gradient(0deg, rgba(0,0,0,1), rgba(0,0,0,0.3) 70.71%), url('http://thebierstein.com/wp-content/themes/bier_stein/assets/img/Banner_About-04.png');
   // background-size: 100%;
   height: 500px;
   width:100%;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .main-title{
@@ -36,6 +38,17 @@ body{
   text-shadow: black 0.1em 0.1em 0.1em;
 }
 
-.card-body{
-  height:200px;
+.mcard{
+  height:280px;
+  width:200px;
+  position: relative;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2px;
+  margin: 10px;
 }

@@ -1,3 +1,48 @@
+$font-mycolor: white;
+
 .new-coc{
+  color:$font-mycolor;
+}
+
+.coc{
+  color:$font-mycolor;
+}
+
+.cocktail{
+  width:60%;
+  background-color:rgba(2, 2, 2, 0.4);
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.coc-img{
+  width:150px;
+  height:150px;
+  margin-top: 100px;
+  margin-bottom: -75px;
+  margin-left: -75px;
+  position: relative;
+  z-index: 101;
+  border-style: solid;
+  border-width: 0.5px;
+  box-shadow: black 2px 2px 3px;
+  border-radius: 4px;
+}
+
+.coc-name{
+  font-family: 'Roboto', sans-serif;
+  margin: -10px 0px 10px 85px;
+  color:white;
+  font-size:40px;
+}
+
+.coc-des{
+  margin-left: 20px;
+  font-family: 'Roboto', sans-serif;
+  color:#DDDDDD;
+  font-size:24px;
+}
+
+.del{
   color:white;
 }
