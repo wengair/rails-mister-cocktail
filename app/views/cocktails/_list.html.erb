@@ -2,7 +2,7 @@
 <div class="row">
   <% @cocktails.each do |cocktail| %>
     <div class="card border m-3 shadow-sm" style="width: 18rem;">
-      <div class="card-body bg-light">
+      <div class="card-body bg-light" style="background-image: url(<%= cocktail.photo %>); background-size: contain;">
         <h5 class="card-title"><%= cocktail.name %></h5>
       </div>
       <div class="card-footer bg-white">
