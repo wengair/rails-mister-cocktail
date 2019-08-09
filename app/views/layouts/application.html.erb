@@ -7,9 +7,34 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700|Roboto:400,500i&display=swap" rel="stylesheet">
   </head>
 
   <body>
+    <ul class="nav flex-sm-row d-flex justify-content-between p-2 bg-light ">
+      <li class="nav-item">
+        <%= link_to "Happy List", cocktails_path, class:"btn btn-light" %>
+      </li>
+      <li class="nav-item d-flex">
+        <div class=" d-inline">
+          <%= form_for :update_list, url: '/cocktails/update_list', method: :get do |f| %>
+              <%= f.text_field :query, class: "text-field" %>
+              <%= f.submit "submit", class: "btn btn-outline-success ml-2 mr-2" %>
+          <% end %>
+        </div>
+        <!-- <form class="form-inline" action="/flats/update_list">
+          <input class="form-control" type="text" name="lastname">
+          <input class="btn btn-outline-success ml-2 mr-2" type="submit" value="Submit">
+        </form> -->
+        <div>
+        <%= link_to "Add Cocktail", new_cocktail_path, class: "btn btn-outline-primary" %>
+        </div>
+      </li>
+    </ul>
     <%= yield %>
+    <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
+    <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>
 </html>

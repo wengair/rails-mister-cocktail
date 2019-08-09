@@ -1,0 +1,16 @@
+<h1>Cocktails#show</h1>
+<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="container d-flex">
+  <div class="cocktail">
+    <%= @cocktail.name %>
+    <%= @cocktail.description %>
+  </div>
+  <div class="ingredient">
+    <ul>
+      <% @doses.each do |dose| %>
+        <li><%= dose.ingredient.name %> <%= dose.description %> <%= link_to "test",dose_path(dose),method: :delete  %>  </li>
+        <% end %>
+    </ul>
+    <%= render 'doses/new_dose', dose: @dose %>
+  </div>
+</div>

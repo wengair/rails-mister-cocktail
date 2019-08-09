@@ -1,0 +1,13 @@
+
+<div class="row">
+  <% @cocktails.each do |cocktail| %>
+    <div class="card border m-3 shadow-sm" style="width: 18rem;">
+      <div class="card-body bg-light">
+        <h5 class="card-title"><%= cocktail.name %></h5>
+      </div>
+      <div class="card-footer bg-white">
+        <%= link_to "More Info", cocktail_path(cocktail), style:"color:#007BFF" %>
+      </div>
+    </div>
+  <% end %>
+</div>

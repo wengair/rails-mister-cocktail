@@ -1,0 +1,5 @@
+<div class="container">
+  <h1>All our Cocktails(<%= @cocktails.length %>)</h1>
+  <p>You search for <%= @query %>. We found <%= @cocktails.length %> out of <%= @total %> on out website.</p>
+  <%= render 'list', cocktails:@cocktails %>
+</div>
