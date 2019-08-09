@@ -16,7 +16,7 @@ class CocktailsController < ApplicationController
   def create
     @cocktail = Cocktail.new(str_params)
     if @cocktail.save
-      redirect_to cocktails_path
+      redirect_to root_path
     else
       render :new
     end
@@ -24,7 +24,7 @@ class CocktailsController < ApplicationController
 
   def update_list
     @query = params[:update_list][:query]
-    redirect_to cocktails_path if @query == ''
+    redirect_to root_path if @query == ''
     @total = Cocktail.all.length
     @cocktails = Cocktail.where("name LIKE '%#{@query}%'")
   end
