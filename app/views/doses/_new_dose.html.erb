@@ -2,6 +2,6 @@
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.input :ingredient , collection: Ingredient.all %>
     <%= f.input :description %>
-    <%= f.submit "add a ingredient", class: "btn btn-primary" %>
+    <%= f.submit "add a ingredient", class: "btn btn-secondary" %>
   <% end %>
 </div>
